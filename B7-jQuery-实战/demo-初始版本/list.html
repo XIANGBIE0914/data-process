@@ -198,5 +198,21 @@
 		<script type="text/javascript" src="js/box.js" ></script>
 		<script type="text/javascript" src="js/utils.js" ></script>
 		<script type="text/javascript" src="js/list.js" ></script>
+		<script>
+		   $(function(){
+			$("#allChoose").click(function(){
+				$(".choose:checkbox").prop("checked",$(this).prop("checked"));
+			})
+			
+			$(".choose:checkbox").click(function(){
+			   if($(".choose:checkbox").length === $(".choose:checked").length){
+				   //只有所有的都有checked属性，上面的才被选定
+				   $("#allChoose").prop("checked",true);
+			   }else{
+				   $("#allChoose").prop("checked",false);
+			   }
+			});
+		   })
+		</script>
 	</body>
 </html>
